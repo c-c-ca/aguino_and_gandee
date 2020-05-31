@@ -61,7 +61,7 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
 
     white-space: nowrap;
     overflow-x: auto;
@@ -73,11 +73,17 @@ a {
     max-width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
+
+    transition: transform 133ms ease-in-out;
 }
 
 .thumbnail-image {
     display: block;
     width: 100%;
+}
+
+.thumbnail-item:hover {
+    transform: scale(1.2);
 }
 
 .thumbnail-title {
@@ -101,6 +107,13 @@ a {
 .detail-image-frame {
     text-align: center;
     position: relative;
+
+    transition: transform 333ms cubic-bezier(1, .06, .28, 1);
+}
+
+.is-tiny {
+    transform: scale(0.001);
+    transition: transform 0ms;
 }
 
 .detail-image-title {
@@ -118,7 +131,21 @@ a {
     width: 90%;
 }
 
-@media all and (min-width: 768px) {
+.hidden-detail .detail-image-container {
+    display: none;
+}
+
+.hidden-detail .thumbnail-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+    max-width: 80%;
+}
+
+/* @media all and (min-width: 768px) { */  /* Original Solution */
+@media all and (orientation: landscape) {  /* Bronze Challenge Solution */
     .main-content {
         flex-direction: row;
         overflow: hidden;
@@ -128,6 +155,7 @@ a {
         flex-direction: column;
         order: 0;
         margin-left: 20px;
+        padding: 0 35px;
     }
 
     .thumbnail-item {
