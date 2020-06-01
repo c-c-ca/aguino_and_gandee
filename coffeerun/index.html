@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>coffeerun</title>
+    </head>
+    <body>
+        <script src="scripts/datastore.js" charset="utf-8"></script>
+        <script src="scripts/truck.js" charset="utf-8"></script>
+        <script src="scripts/main.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            myTruck.createOrder({ emailAddress: 'me@goldfinger.com', coffee: 'double mocha'});
+            myTruck.createOrder({ emailAddress: 'dr@no.com', coffee: 'decaf'});
+            myTruck.createOrder({ emailAddress: 'm@bond.com', coffee: 'earl grey'});
+            myTruck.printOrders();
+            myTruck.deliverOrder('dr@no.com');
+            myTruck.deliverOrder('m@bond.com');
+            myTruck.printOrders();
+        </script>
+    </body>
+</html>
