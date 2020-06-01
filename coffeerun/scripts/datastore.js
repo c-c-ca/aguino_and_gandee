@@ -4,6 +4,7 @@
 
     // Chapter 8 - Silver Challenge: Making data Private
     // var data = {};
+    // remove `this.` from this.data in all DataStore methods
 
     function DataStore() {
         this.data = {};
